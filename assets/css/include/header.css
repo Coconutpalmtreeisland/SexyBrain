@@ -1,0 +1,197 @@
+#header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    font-family: var(--main-neo);
+}
+
+.nav ul {
+    display: flex;
+}
+
+a {
+    transition: color 0.3s;
+}
+
+ul a:hover {
+    color: red !important;
+}
+
+.nav ul li a {
+    display: inline-block;
+    padding: 20px;
+    color: #283269;
+
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    margin-top: 15px;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    position: absolute;
+    display: flex;
+}
+
+.logo img {
+    width: 100%;
+}
+
+nav.nav {
+    z-index: 1000;
+}
+
+.loginnav ul {
+    display: flex;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.login__btn:hover {
+    background-color: #535e94;
+    color: white !important;
+}
+
+.login__btn a {
+    display: block;
+}
+
+.login__btn {
+    color: #fff !important;
+    border-radius: 30px;
+    background-color: #283269;
+    transition: background-color 0.3s;
+}
+
+.loginnav>ul.welcome li:nth-child(1) {
+    margin-right: -0.5rem;
+}
+
+.loginnav>ul.welcome li:nth-child(1)::after {
+    display: none;
+}
+
+.loginnav ul li:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: #283269;
+    border-radius: 100%;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.loginnav ul li:nth-child(1) {
+    margin-right: 30px;
+}
+
+.loginnav ul li a {
+    display: inline-block;
+    padding: 12px 25px;
+    color: #283269;
+}
+
+.name_btn {
+    margin-right: 0;
+}
+
+@media (max-width: 850px) {
+    #header {
+        height: 70px;
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+
+    .nav ul li a {
+        padding: 8px 15px;
+    }
+
+    .loginnav ul li a {
+        padding: 8px 15px;
+    }
+
+    .loginnav ul li:nth-child(1)::after {
+        height: 4px;
+        width: 4px;
+    }
+}
+
+@media (max-width: 550px) {
+    #header {
+        height: 50px;
+        position: relative;
+    }
+
+    .loginnav {
+        width: 100%;
+    }
+
+    .loginnav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .loginnav ul li a {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+    }
+
+    .nav {
+        position: absolute;
+        width: 146px;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav ul li a {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        transition: color 0.3s;
+    }
+
+    .logo {
+        width: 70px;
+        top: 22%;
+        z-index: 10000000;
+    }
+
+    .loginnav ul li:nth-child(1)::after {
+        display: none;
+    }
+
+    .loginnav ul li:nth-child(1) {
+        margin-right: 5px;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .down_nav {
+        background-color: #CEDFFD;
+        justify-content: center;
+        padding: 3px;
+        z-index: 1000 !important;
+        align-content: center;
+
+    }
+
+    .down_nav ul {
+        margin: 0 auto;
+    }
+
+
+}
+
+.name_btn ul li a {
+    padding: 0 !important;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇌섹남녀-boardWrite</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/board.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <nav class="nav">
+                <ul class="down_nav">
+                <li><a href="../home/main.hmtl">홈</a></li>
+                <li><a href="boardhome.html">문제</a></li>
+                <li><a href="boardCommunity.html">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <h2 class="logo">
+                <a href="#"><img src="../assets/img/logo.png" alt="logo"></a>
+            </h2>
+                <div class="loginnav">
+                    <ul>
+                        <li><a href="../join/login.php">로그인</a></li>
+                        <li><a class="login__btn" href="../join/joinInsert.php">회원가입</a></li>
+                    </ul>
+                </div>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div id="b_write_wrap">
+                <div class="write_board"></div>
+                <form action="boardWriteSave.html" name="#" method="#" class="board_write b_p">
+                    <fieldset>
+                        <legend>글 작성하기</legend>
+                        <div>
+                            <label id="b_title" for="title" class="label_text">제목 <span class="red_t">*</span></label>
+                            <input type="text" id="boardTitle" name="boardTitle" class="input__style"  placeholder="제목을 입력해주세요">
+                        </div>
+                        <div id="weite_box2">
+                            <label id="boardContents_w" for="boardContents" class="label_text">내용 작성하기</label>
+                            <textarea name="boardContents" id="boardContents" rows="20" class="input__style"></textarea>
+                        </div>
+                        <div >
+                            <label id="boardPass_label" for="boardPass"class="label_text">비밀번호 입력</label>
+                            <input type="password" id="boardPass" class="input__style" autocomplete="off" placeholder="글을 수정하려면 로그인 비밀번호를 입력하셔야 합니다." required>
+                        </div>
+                        <div class="board__btns">
+                            <button type="submit" class="btn__style3">저장하기</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        <!-- main -->
+
+        <footer id="footer">
+            <div class="footerwrap">
+                <div class="footer__logo"><img src="../assets/img/footer_logo.png" alt="logo02"></div>
+            <div class="footer2">
+                <div class="footer_us">
+                    <ul>
+                        <li><a href="#">권초록</a></li>
+                        <li><a href="#">오종석</a></li>
+                        <li><a href="#">이원영</a></li>
+                        <li><a href="#">이혜민</a></li>
+                    </ul>
+                </div>
+                <div class="copylight">© 2023 뇌섹남녀</div>
+            </div>
+            </div>
+        </footer>
+        <!-- footer -->
+    </div>
+</body>
+
+</html>
