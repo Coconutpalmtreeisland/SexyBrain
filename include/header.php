@@ -12,7 +12,7 @@
         <div class="loginnav">
             <?php if (isset($_SESSION['memberId'])) { ?>
             <ul class="welcome">
-                <li><a href="../mypage/mypage.php" class="name_btn"><?= $_SESSION['youName'] ?>님👋</a></li>
+                <li><a href="../mypage/mypage.php" class="name_btn">마이페이지</a></li>
                 <li><a class="login__btn" href="../join/logout.php">로그아웃</a></li>
                 <!-- <li><a href="#"><a class="propile" href="#">뇌섹</a></a></li> -->
             </ul>

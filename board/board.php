@@ -3,10 +3,13 @@ $currentPage = 'board';
 include "../connect/connect.php";
 include "../connect/session.php";
 
+
 // echo "<pre>";
 // var_dump($_SESSION);
 // echo "</pre>";
 
+$boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 ORDER BY boardId DESC";
+$boardInfo = $connect->query($boardSql);
 // 한 페이지에 보여줄 게시물 수
 $limit = 7;
 
@@ -14,11 +17,7 @@ $limit = 7;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // 전체 게시물 수를 DB에서 얻어옵니다.
-if ($keyword) {
-    $totalBoardSql = "SELECT COUNT(*) as total FROM sexyBoard WHERE boardDelete = 1 AND boardTitle LIKE '%$keyword%'";
-} else {
-    $totalBoardSql = "SELECT COUNT(*) as total FROM sexyBoard WHERE boardDelete = 1";
-}
+$totalBoardSql = "SELECT COUNT(*) as total FROM sexyBoard WHERE boardDelete = 1";
 $totalBoardResult = $connect->query($totalBoardSql);
 $totalBoardRow = $totalBoardResult->fetch_assoc();
 $totalBoard = $totalBoardRow['total'];
@@ -30,18 +29,7 @@ $totalPage = ceil($totalBoard / $limit);
 $start = ($page - 1) * $limit;
 
 // DB에서 한 페이지에 보여줄 게시물만 얻어옵니다.
-$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : null;
-$category = isset($_GET['category']) ? $_GET['category'] : null;
-
-if ($keyword && $category) {
-    $boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 AND boardCategory = '$category' AND boardTitle LIKE '%$keyword%' ORDER BY boardId DESC";
-} elseif ($keyword) {
-    $boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 AND boardTitle LIKE '%$keyword%' ORDER BY boardId DESC";
-} elseif ($category) {
-    $boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 AND boardCategory = '$category' ORDER BY boardId DESC";
-} else {
-    $boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 ORDER BY boardId DESC";
-}
+$boardSql = "SELECT * FROM sexyBoard WHERE boardDelete = 1 ORDER BY boardId DESC LIMIT $start, $limit";
 $boardInfo = $connect->query($boardSql);
 
 // 시작 페이지와 끝 페이지를 계산합니다.

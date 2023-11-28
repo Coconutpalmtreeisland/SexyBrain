@@ -230,7 +230,6 @@ fieldset div:nth-child(4) {}
 #boardContents {
     width: 100%;
     border-radius: 10px;
-    max-height: 400px;
     padding: 20px;
 }
 
@@ -445,12 +444,9 @@ textarea:hover, textarea:focus, textarea:active {
 
 
 
-.b_contents_style {
-    max-height: 500px;
-}
 
 .b_contents_style {
-    box-shadow: inset 0px 0.5px 2px 1px #a7bee7a2;
+    border: 0.15rem solid var(--primary-color);
     padding: 0px 18px 5px 18px;
     border-radius: 10px;
     margin-top: 20px;
